@@ -20,7 +20,7 @@ function createCache(cacheKey: string, cwd: string, prettierPath?: string) {
 
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const prettier: CacheInstance['prettier'] = require(prettierPath)
-  const configPath = prettier.resolveConfigFile.sync(cwd)
+  const configPath = prettier.resolveConfigFile(cwd)
   const ignorePath = path.join(cwd, '.prettierignore')
   const options =
     prettier.resolveConfig.sync(cwd, {
