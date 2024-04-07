@@ -23,7 +23,7 @@ function createCache(cacheKey: string, cwd: string, prettierPath?: string) {
   const configPath = prettier.resolveConfigFile(cwd)
   const ignorePath = path.join(cwd, '.prettierignore')
   const options =
-    prettier.resolveConfig.sync(cwd, {
+    await prettier.resolveConfig(cwd, {
       useCache: false,
       editorconfig: true,
     }) || {}
