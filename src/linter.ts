@@ -103,7 +103,7 @@ declare module 'prettier' {
 /**
  * The core_d service entry point.
  */
-export const invoke = (
+export const invoke = async (
   cwd: string,
   args: string[],
   text: string,
