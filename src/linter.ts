@@ -118,7 +118,7 @@ export const invoke = async (
 
   let cache = prettierCache.get(cacheKey)
   if (!cache) {
-    cache = createCache(cacheKey, cwd, prettierPath)
+    cache = await createCache(cacheKey, cwd, prettierPath)
   } else if (mtime > (cache.lastRun || 0)) {
     clearRequireCache(cwd)
     cache = createCache(cacheKey, cwd, prettierPath)
