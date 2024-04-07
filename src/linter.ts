@@ -121,7 +121,7 @@ export const invoke = async (
     cache = await createCache(cacheKey, cwd, prettierPath)
   } else if (mtime > (cache.lastRun || 0)) {
     clearRequireCache(cwd)
-    cache = createCache(cacheKey, cwd, prettierPath)
+    cache = await createCache(cacheKey, cwd, prettierPath)
   }
   cache.lastRun = Date.now()
 
