@@ -8,7 +8,7 @@ import resolve from 'resolve'
 
 const prettierCache = new LRU<CacheInstance>(10)
 
-function createCache(cacheKey: string, cwd: string, prettierPath?: string) {
+async function createCache(cacheKey: string, cwd: string, prettierPath?: string) {
   if (prettierPath == null) {
     try {
       prettierPath = resolve.sync('prettier', { basedir: cwd })
