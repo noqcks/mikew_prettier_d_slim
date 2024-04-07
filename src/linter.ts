@@ -137,7 +137,7 @@ export const invoke = (
     throw new Error('set filePath with `--stdin-filepath`')
   }
 
-  const fileInfo = cache.prettier.getFileInfo.sync(filePath, {
+  const fileInfo = await cache.prettier.getFileInfo(filePath, {
     ignorePath: cache.ignorePath,
     pluginSearchDirs: parsedOptions.pluginSearchDir
       ? parsedOptions.pluginSearchDir.split(':')
