@@ -167,7 +167,7 @@ export const invoke = async (
 
   callback(
     undefined,
-    cache.prettier.format(parsedOptions.text || text, options),
+    await cache.prettier.format(parsedOptions.text || text, options),
   )
 }
 
